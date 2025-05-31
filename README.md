@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![スクリーンショット](https://github.com/user-attachments/assets/c6453974-c7a7-4718-8d98-db620fb20e7b)
 
-## Getting Started
+# リアルタイムチャットアプリ
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+このプロジェクトでは、Gather や Ovice などのバーチャルオフィスアプリのような、リアルタイムチャットアプリを構築します。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+現在参加しているメンバーのみが、リアルタイムにチャットを送信・閲覧できるように実装します！
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 学習目標
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Socket.IO を使用したリアルタイム通信の実装について、学習します。
+React コンポーネントとサーバー間の双方向通信、イベント駆動型アーキテクチャの設計について確認してください。
 
-## Learn More
+### 推奨技術
 
-To learn more about Next.js, take a look at the following resources:
+このプロジェクトの難易度と趣旨を踏まえて、以下の使用をお勧めします。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js を用いたフロントエンド＆バックエンド統合環境
+- Socket.IO を使用したリアルタイム通信の実装
+- TypeScript による型チェック
+- Tailwind CSS を用いたスタイリング
+- shadcn/ui を用いたコンポーネントの使用
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎯 お題
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 「ユーザーストーリー」を全て満たすアプリを構築してください。
+- 必要に応じて、スクリーンショットやデモサイトの URL を参照してください。
+- スタイルは、あなた自身で独自にカスタマイズすることが可能です。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 必須機能
+
+1. **ユーザー登録**：
+   - チャットに参加するユーザー名を入力し、登録する。
+2. **メッセージ送信**：
+   - テキストメッセージを入力し、リアルタイムで全参加者に送信する。
+3. **メッセージ表示**：
+   - 送信されたメッセージを時系列順に表示し、送信者の名前を表示する。
+4. **接続状態管理**：
+   - ユーザーの接続/切断をリアルタイムで検知し、表示する。
+
+## ユーザーストーリー
+
+- [ ] ユーザーがサイトにアクセスすると、ユーザー名を入力できるフォームが表示されている。
+- [ ] ユーザー名を入力して「参加する」ボタンをクリックすると、チャットルームに入室できる。
+- [ ] チャットルームでは、メッセージ入力欄とメッセージ履歴を表示する。
+- [ ] メッセージを入力して送信すると、自分を含む全参加者のメッセージ履歴に即座に表示される。
+- [ ] 各メッセージには、送信者の名前と送信時刻が表示される。
+- [ ] 新しいユーザーが参加したとき、チャットルーム内に通知が表示される。
+- [ ] ユーザーが退出したとき、チャットルーム内に通知が表示される。
+- [ ] タブ切り替えで、チャットと現在接続中のユーザー一覧が表示できる。
+- [ ] メッセージ入力中は、他のユーザーに「○○ さんが入力中...」と表示される。
+- [ ] チャットページ左側には、ビジュアルマップを表示する。
+- [ ] ビジュアルマップには、現在接続中のユーザーが表示される。
+- [ ] ビジュアルマップの、自分のユーザーアイコンはドラッグ&ドロップで移動できる。
